@@ -15,10 +15,14 @@ const App: React.FC = () => {
         <h1>S p a c e i t</h1>
       </div>
       <div className="row">
-        <input type="text" onChange={e => handleChange(e.target.value)} />
+        Input
       </div>
       <div className="row">
-        <input type="text" value={text} disabled={true} />
+        <input type="text" onChange={e => handleChange(e.target.value)} />
+      </div>
+      <div className="row">Result</div>
+      <div className="row">
+        <h1>{text}</h1>
       </div>
     </div>
   )

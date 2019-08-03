@@ -50,6 +50,10 @@ function space(sentence: string): string {
     result += char + ' '
   })
 
+  if (result[result.length - 1] === ' ') {
+    result = result.slice(0, -1)
+  }
+
   return result
 }
 
