@@ -33,6 +33,12 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && yarn lint",
+      "pre-push": "yarn lint"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
