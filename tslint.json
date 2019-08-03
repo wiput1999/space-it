@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-eslint-rules",
+    "tslint-plugin-prettier",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "interface-name": false,
+    "array-type": false,
+    "eqeqeq": [
+      "error",
+      "always"
+    ],
+    "jsx-no-lambda": false,
+    "jsx-no-multiline-js": false,
+    "prettier": [
+      true,
+      ".prettierrc"
+    ]
+  },
+  "rulesDirectory": [
+    "node_modules/tslint-eslint-rules/dist/rules"
+  ]
+}
