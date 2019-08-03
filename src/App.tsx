@@ -44,7 +44,7 @@ const App: React.FC = () => {
           <h2 className="link-disabled">Copied!</h2>
         ) : (
           <h2 className="link" onClick={handleCopy}>
-            Copy Result
+            Copy
           </h2>
         )}
       </div>
