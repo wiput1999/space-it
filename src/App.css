@@ -12,3 +12,14 @@ input {
   padding: 0.3em;
   font-size: 2em;
 }
+
+.link {
+  color: #61dafb;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link-disabled {
+  color: #61dafb;
+  text-decoration: underline;
+}

@@ -21,6 +21,14 @@ function isThaiVowels(char: string): boolean {
   return false
 }
 
+function removeTrailingSpace(text: string): string {
+  if (text[text.length - 1] === ' ') {
+    return text.slice(0, -1)
+  }
+
+  return text
+}
+
 function space(sentence: string): string {
   let result = ''
 
@@ -30,18 +38,14 @@ function space(sentence: string): string {
     }
 
     if (isThaiVowels(char)) {
-      if (result[result.length - 1] === ' ') {
-        result = result.slice(0, -1)
-      }
+      result = removeTrailingSpace(result)
 
       result += char + ' '
       return
     }
 
     if (char === 'ำ') {
-      if (result[result.length - 1] === ' ') {
-        result = result.slice(0, -1)
-      }
+      result = removeTrailingSpace(result)
 
       result += 'ํ า '
       return
@@ -50,9 +54,7 @@ function space(sentence: string): string {
     result += char + ' '
   })
 
-  if (result[result.length - 1] === ' ') {
-    result = result.slice(0, -1)
-  }
+  result = removeTrailingSpace(result)
 
   return result
 }
