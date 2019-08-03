@@ -1,5 +1,5 @@
 function isThaiVowels(char: string): boolean {
-  const vowels = ['่', '้', '๊', '๋', 'ิ', 'ี', 'ึ', 'ื', '็', 'ั', 'ุ', 'ู']
+  const vowels = ['่', '้', '๊', '๋', 'ิ', 'ี', 'ึ', 'ื', '็', 'ั', 'ุ', 'ู', '์']
 
   if (vowels.includes(char)) {
     return true
