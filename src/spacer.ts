@@ -13,7 +13,7 @@ function isThaiVowels(char: string): boolean {
     'ุ',
     'ู',
     '์',
-    'ํ',
+    'ํ'
   ]
 
   if (vowels.includes(char)) {
