@@ -10,7 +10,13 @@
 input {
   margin: 1em 0;
   padding: 0.3em;
+  width: 60%;
+  max-width: 100%;
   font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-style: solid;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .link {
@@ -22,4 +28,19 @@ input {
 .link-disabled {
   color: #61dafb;
   text-decoration: underline;
+}
+
+.brand{
+  font-family: 'Rubik', sans-serif;
+  font-size: 3em;
+}
+
+input:focus {
+  outline: #56efff auto 5px;
+}
+
+.hr-line{
+  width: 100%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 30px 0px;
 }
