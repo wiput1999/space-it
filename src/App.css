@@ -15,8 +15,10 @@ input {
   font-size: 2em;
   background-color: rgba(0, 0, 0, 0.7);
   border-style: solid;
+  border: none;
   border-radius: 5px;
   text-align: center;
+  color: #FFFFFF;
 }
 
 .link {
