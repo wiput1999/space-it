@@ -27,26 +27,29 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <div className="row">
-        <h1>S p a c e i t</h1>
+        <h1 className="brand">S p a c e i t</h1>
       </div>
-      <div className="row">Input</div>
+      <div className="row">Insert your text below.</div>
       <div className="row">
         <input
           type="text"
-          placeholder="Input"
+          placeholder="Please insert your text..."
           onChange={e => handleChange(e.target.value)}
         />
       </div>
-      <div className="row">Result</div>
-      <div className="row">
-        <h1>{text}</h1>
-        {copyStatus ? (
-          <h2 className="link-disabled">Copied!</h2>
-        ) : (
-          <h2 className="link" onClick={handleCopy}>
-            Copy
-          </h2>
-        )}
+      <div className="hr-line" />
+      <div className="row result-heading">Result</div>
+      <div className="result-block">
+        <div className="row">
+          <span className="result">{text}</span>
+          {copyStatus ? (
+            <h2 className="link-disabled">Copied!</h2>
+          ) : (
+            <h2 className="link" onClick={handleCopy}>
+              Copy
+            </h2>
+          )}
+        </div>
       </div>
     </div>
   )
