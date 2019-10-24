@@ -10,7 +10,11 @@ const App: React.FC = () => {
   const [copyStatus, setCopyStatus] = useState(false)
 
   const handleChange = (sentence: string) => {
-    setText(space(sentence))
+    if (sentence.length === 0) {
+      setText('R e s u l t')
+    } else {
+      setText(space(sentence))
+    }
   }
 
   const handleCopy = () => {
