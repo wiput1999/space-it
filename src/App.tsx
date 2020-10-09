@@ -24,7 +24,7 @@ const App: React.FC = () => {
       debug: true,
       message: 'Press #{key} to copy',
     })
-    setInterval(() => {
+    setTimeout(() => {
       setCopyStatus(false)
     }, 2000)
   }, [text])
@@ -40,7 +40,7 @@ const App: React.FC = () => {
     <Fragment>
       <h1 id="brand">S p a c e i t</h1>
 
-      <form id="form"  onSubmit={preventDefault}>
+      <form id="form" onSubmit={preventDefault}>
         <label className="label" htmlFor="toBeSpaced">
           Insert your text below.
         </label>

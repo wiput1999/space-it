@@ -2,8 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 100vh;
   text-align: center;
+  width: 100%;
+  max-width: 840px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 60px 20px;
 }
 
 #brand {
@@ -16,6 +20,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   margin: .25em 0;
 }
 
@@ -25,13 +30,12 @@
 }
 
 #space-it {
+  width: 100%;
+  font-size: 2em;
+  color: #ffffff;
+  text-align: center;
   margin: 1em 0;
   padding: 0.3em;
-  width: 60%;
-  max-width: 100%;
-  font-size: 2em;
-  text-align: center;
-  color: #ffffff;
   border: 0;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -59,9 +63,9 @@
 #result-area {
   padding: 40px 20px;
   background: rgba(0, 0, 0, 0.5);
-  width: 60%;
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
+  padding: 2em;
   border-radius: 10px;
 }
 
