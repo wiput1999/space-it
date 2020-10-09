@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 
 import copy from 'copy-to-clipboard'
 import space from './spacer'
@@ -9,15 +9,16 @@ const App: React.FC = () => {
   const [text, setText] = useState('R e s u l t')
   const [copyStatus, setCopyStatus] = useState(false)
 
-  const handleChange = (sentence: string) => {
-    if (sentence.length === 0) {
-      setText('R e s u l t')
-    } else {
-      setText(space(sentence))
-    }
-  }
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const sentence = event.target.value as string
 
-  const handleCopy = () => {
+      setText(sentence.length ? space(sentence) : 'R e s u l t')
+    },
+    []
+  )
+
+  const handleCopy = useCallback(() => {
     setCopyStatus(true)
     copy(text, {
       debug: true,
@@ -26,7 +27,7 @@ const App: React.FC = () => {
     setInterval(() => {
       setCopyStatus(false)
     }, 2000)
-  }
+  }, [text])
 
   return (
     <div className="App">
@@ -38,7 +39,7 @@ const App: React.FC = () => {
         <input
           type="text"
           placeholder="Please insert your text..."
-          onChange={e => handleChange(e.target.value)}
+          onChange={handleChange}
         />
       </div>
       <div className="hr-line" />

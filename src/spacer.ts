@@ -16,13 +16,10 @@ function isThaiVowels(char: string): boolean {
     'ํ'
   ]
 
-  if (vowels.includes(char)) {
-    return true
-  }
-  return false
+  return vowels.includes(char)
 }
 
-function removeTrailingSpace(text: string): string {
+function removeTrailingSpace(text: string) {
   if (text[text.length - 1] === ' ') {
     return text.slice(0, -1)
   }
@@ -30,7 +27,7 @@ function removeTrailingSpace(text: string): string {
   return text
 }
 
-function space(sentence: string): string {
+function space(sentence: string) {
   let result = ''
 
   sentence.split('').forEach(char => {
