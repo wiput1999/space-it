@@ -13,7 +13,7 @@ function isThaiVowels(char: string): boolean {
     'ุ',
     'ู',
     '์',
-    'ํ'
+    'ํ',
   ]
 
   return vowels.includes(char)
@@ -30,7 +30,7 @@ function removeTrailingSpace(text: string) {
 function space(sentence: string) {
   let result = ''
 
-  sentence.split('').forEach(char => {
+  sentence.split('').forEach((char) => {
     if (char === ' ') {
       return
     }

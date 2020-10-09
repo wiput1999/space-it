@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { Fragment, useCallback, useState } from 'react'
 
 import copy from 'copy-to-clipboard'
 import space from './spacer'
@@ -11,7 +11,7 @@ const App: React.FC = () => {
 
   const handleChange = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
-      const sentence = event.target.value as string
+      const sentence = event.currentTarget.value as string
 
       setText(sentence.length ? space(sentence) : 'R e s u l t')
     },
@@ -22,41 +22,55 @@ const App: React.FC = () => {
     setCopyStatus(true)
     copy(text, {
       debug: true,
-      message: 'Press #{key} to copy'
+      message: 'Press #{key} to copy',
     })
     setInterval(() => {
       setCopyStatus(false)
     }, 2000)
   }, [text])
 
+  const preventDefault = useCallback(
+    (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault()
+    },
+    []
+  )
+
   return (
-    <div className="App">
-      <div className="row">
-        <h1 className="brand">S p a c e i t</h1>
-      </div>
-      <div className="row">Insert your text below.</div>
-      <div className="row">
+    <Fragment>
+      <h1 id="brand">S p a c e i t</h1>
+
+      <form id="form"  onSubmit={preventDefault}>
+        <label className="label" htmlFor="toBeSpaced">
+          Insert your text below.
+        </label>
         <input
-          type="text"
-          placeholder="Please insert your text..."
+          id="space-it"
+          name="toBeSpaced"
+          placeholder="Text to be spaced"
+          aria-label="Text to be spaced"
           onChange={handleChange}
+          autoComplete="off"
+          title="Text to be spaced"
         />
-      </div>
-      <div className="hr-line" />
-      <div className="row result-heading">Result</div>
-      <div className="result-block">
-        <div className="row">
-          <span className="result">{text}</span>
-          {copyStatus ? (
-            <h2 className="link-disabled">Copied!</h2>
-          ) : (
-            <h2 className="link" onClick={handleCopy}>
-              Copy
-            </h2>
-          )}
-        </div>
-      </div>
-    </div>
+      </form>
+
+      <hr className="hr-line" />
+
+      <h2 id="result-heading">Result</h2>
+      <section id="result-area">
+        <h3 className="result">{text}</h3>
+        {copyStatus ? (
+          <button id="copy" className="-disabled" title="Click to copy">
+            Copied!
+          </button>
+        ) : (
+          <button id="copy" onClick={handleCopy} title="Click to copy">
+            Copy
+          </button>
+        )}
+      </section>
+    </Fragment>
   )
 }
 
