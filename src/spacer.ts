@@ -30,7 +30,7 @@ function removeTrailingSpace(text: string) {
 function space(sentence: string) {
   let result = ''
 
-  sentence.split('').forEach((char) => {
+  Array.from(sentence).forEach((char) => {
     if (char === ' ') {
       return
     }
