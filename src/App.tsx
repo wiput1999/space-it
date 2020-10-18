@@ -40,6 +40,7 @@ const App: React.FC = () => {
     <Fragment>
       <h1 id="brand">S p a c e i t</h1>
 
+      <div className="card">
       <form id="form" onSubmit={preventDefault}>
         <label className="label" htmlFor="toBeSpaced">
           Insert your text below.
@@ -47,7 +48,7 @@ const App: React.FC = () => {
         <input
           id="space-it"
           name="toBeSpaced"
-          placeholder="Text to be spaced"
+          placeholder="Text to be 's p a c e d'"
           aria-label="Text to be spaced"
           onChange={handleChange}
           autoComplete="off"
@@ -70,6 +71,7 @@ const App: React.FC = () => {
           </button>
         )}
       </section>
+      </div>
     </Fragment>
   )
 }

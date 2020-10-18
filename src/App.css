@@ -90,3 +90,9 @@
 #copy.-disabled {
   cursor: not-allowed;
 }
+
+.card {
+  background: #363c44;
+  padding: 30px;
+  border-radius: 15px;
+}
