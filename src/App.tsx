@@ -40,36 +40,38 @@ const App: React.FC = () => {
     <Fragment>
       <h1 id="brand">S p a c e i t</h1>
 
-      <form id="form" onSubmit={preventDefault}>
-        <label className="label" htmlFor="toBeSpaced">
-          Insert your text below.
-        </label>
-        <input
-          id="space-it"
-          name="toBeSpaced"
-          placeholder="Text to be spaced"
-          aria-label="Text to be spaced"
-          onChange={handleChange}
-          autoComplete="off"
-          title="Text to be spaced"
-        />
-      </form>
+      <div className="card">
+        <form id="form" onSubmit={preventDefault}>
+          <label className="label" htmlFor="toBeSpaced">
+            Insert your text below.
+          </label>
+          <input
+            id="space-it"
+            name="toBeSpaced"
+            placeholder="Text to be 's p a c e d'"
+            aria-label="Text to be spaced"
+            onChange={handleChange}
+            autoComplete="off"
+            title="Text to be spaced"
+          />
+        </form>
 
-      <hr className="hr-line" />
+        <hr className="hr-line" />
 
-      <h2 id="result-heading">Result</h2>
-      <section id="result-area">
-        <h3 className="result">{text}</h3>
-        {copyStatus ? (
-          <button id="copy" className="-disabled" title="Click to copy">
-            Copied!
-          </button>
-        ) : (
-          <button id="copy" onClick={handleCopy} title="Click to copy">
-            Copy
-          </button>
-        )}
-      </section>
+        <h2 id="result-heading">Result</h2>
+        <section id="result-area">
+          <h3 className="result">{text}</h3>
+          {copyStatus ? (
+            <button id="copy" className="-disabled" title="Click to copy">
+              Copied!
+            </button>
+          ) : (
+            <button id="copy" onClick={handleCopy} title="Click to copy">
+              Copy
+            </button>
+          )}
+        </section>
+      </div>
     </Fragment>
   )
 }
