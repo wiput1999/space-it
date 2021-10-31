@@ -62,8 +62,8 @@ const App: React.FC = () => {
         <section id="result-area">
           <h3 className="result">{text}</h3>
           {copyStatus ? (
-            <button id="copy" className="-disabled" title="Click to copy">
-              Copied!
+            <button id="copied" className="-disabled" title="Click to copy">
+              Copied! <span role="img" aria-label="">🎉</span>
             </button>
           ) : (
             <button id="copy" onClick={handleCopy} title="Click to copy">

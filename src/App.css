@@ -82,6 +82,24 @@
   color: #000000;
   margin: 1em 0 0 0;
   border: 0;
+  background-color: #46a3a3;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 4px rgb(51 64 82 / 58%);
+}
+
+#copy.-disabled {
+  cursor: not-allowed;
+}
+
+#copied {
+  appearance: none;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.5em;
+  color: #000000;
+  margin: 1em 0 0 0;
+  border: 0;
   background-color: #3b7280;
   cursor: pointer;
   padding: 8px 20px;
